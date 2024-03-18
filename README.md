@@ -1,7 +1,17 @@
 <!--
 author: Sebastian Zug
 
+version: 0.0.1
+
 link:    style.css
+
+language: en
+
+narrator: US English Male
+
+logo:     img/logo.gif
+
+comment:  This template allows you to compare two images side by side and slide between them to see the differences.
 
 @beforeAndAfter: @beforeAndAfter_(@uid,@0,@1)
 
@@ -40,11 +50,46 @@ link:    style.css
 
 # Before and After
 
+    --{{0}}--
 This extension allows you to compare two images side by side and slide between them to see the differences.
+
+__Try it on LiaScript:__
+
+https://LiaScript.github.io/course/?https://raw.githubusercontent.com/LiaTemplates/BeforeAndAfter/main/README.md
+
+__The Project on GitHub:__
+
+https://github.com/LiaTemplates/BeforeAndAfter
+
+
+    --{{1}}--
+There are three ways to use this template.
+The easiest way is to use the import statement and the url of the raw text-file of the master branch or any other branch or version.
+But you can also copy the required functionality directly into the header of your Markdown document, see therefor the last slide.
+And of course, you could also clone this project and change it, as you wish.
+
+    {{1}}
+1. Load the macros via
+
+   __current version:__
+   `import: https://raw.githubusercontent.com/LiaTemplates/BeforeAndAfter/0.0.1/README.md`
+
+   __latest version:__
+   `import: https://raw.githubusercontent.com/LiaTemplates/BeforeAndAfter/main/README.md`
+
+
+2. Copy the definitions into your Project
+
+3. Clone this repository on GitHub
 
 
 ## `@beforeAndAfter`
 
+
+    --{{0}}--
+You can use the `@beforeAndAfter` macro to compare two images side by side and slide between them to see the differences.
+Simply provide the two image URLs as parameters to the macro, without additional spaces in between.
+You can see the result below.
 
 ```markdown
 @beforeAndAfter(img/glacier-1883.jpg,img/glacier-2015.jpg)
@@ -72,6 +117,9 @@ This extension allows you to compare two images side by side and slide between t
 ### Styling
 
 
+    --{{0}}--
+If your images are too large, you can use the `style` attribute to set a maximum width for the images.
+
 ``` markdown
 <!-- style="max-width: 80vh;" -->
 @beforeAndAfter(img/hubble.jpg,img/webb.jpg)
@@ -93,7 +141,15 @@ This extension allows you to compare two images side by side and slide between t
 
 ## Implementation
 
+
+    --{{0}}--
+If you want to use the code directly, you can copy the following definitions into the main comment of your project.
+Thereby `@beforeAndAfter` uses the "helper" macro `@beforeAndAfter_` to which the urls are passes as well as a unique id to distinguish between different components.
+
+
 ```html
+link:    style.css
+
 @beforeAndAfter: @beforeAndAfter_(@uid,@0,@1)
 
 @beforeAndAfter_
